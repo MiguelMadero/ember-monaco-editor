@@ -1,0 +1,1 @@
+export { default } from 'ember-monaco-editor/components/monaco-editor';
