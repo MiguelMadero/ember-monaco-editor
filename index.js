@@ -6,6 +6,23 @@ var Funnel = require('broccoli-funnel');
 // var debug = require('broccoli-stew').debug;
 var environment;
 
+function enifedFormatter (babel) {
+  var t = babel.types;
+
+   return new babel.Plugin('define-to-enifed2', {
+     visitor: {
+       CallExpression: function(node){
+         if (t.isIdentifier(node.callee, {name: 'define'})){
+           node.callee = t.identifier('enifed2');
+         }
+       },
+       BlockStatement: function(){
+         this.skip();
+       }
+     }
+   });
+}
+
 module.exports = {
   name: 'ember-monaco-editor',
 
@@ -15,6 +32,11 @@ module.exports = {
     // the monaco-editor loader doesn't work with fingerprinted assets (yet),
     // so we exclude it.
     parent.options.fingerprint.exclude.push('ember-monaco-editor/vs');
+
+    // Adds a plugin to rename defined and require to avoid conflicts
+    parent.options.babel = parent.options.babel || {};
+    parent.options.babel.plugins = parent.options.babel.plugins || [];
+    parent.options.babel.plugins.push({ transformer: enifedFormatter, position: 'after' });
 
     // TODO: disable uglify for CSS and JS to speed up the build and:
     // [WARN] `ember-monaco-editor/vs/editor/editor.main.js` took: 87370ms (more than 20,000ms)
