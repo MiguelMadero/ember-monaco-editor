@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MiguelMadero/ember-monaco-editor.svg?branch=master)](https://travis-ci.org/MiguelMadero/ember-monaco-editor)
+
 # Ember-monaco-editor
 
 An ember wrapper for the [monaco-editor](https://github.com/Microsoft/monaco-editor) (vs code's editor). From the monaco-editor's README "The Monaco Editor is the code editor that powers [VS Code](https://github.com/Microsoft/vscode), a good page describing the code editor's features is [here](https://code.visualstudio.com/docs/editor/editingevolved)".

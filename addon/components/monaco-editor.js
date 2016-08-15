@@ -9,7 +9,7 @@ export default Ember.Component.extend({
   layout,
   init () {
     this._super(...arguments);
-    monacoLoadingPromise = monacoLoadingPromise || this._loadScript('vs/loader.js');
+    monacoLoadingPromise = monacoLoadingPromise || this._loadScript('/vs/loader.js');
     monacoLoadingPromise.then(()=>{
       window.require(['vs/editor/editor.main'], () => {
         if(typeof monaco !== "undefined") {
