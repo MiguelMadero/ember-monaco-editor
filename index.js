@@ -16,6 +16,10 @@ module.exports = {
     // so we exclude it.
     parent.options.fingerprint.exclude.push('ember-monaco-editor/vs');
 
+    // TODO: cosinder moving this to the blueprint so each app owns it.
+    parent.options.amd = parent.options.amd  || {};
+    parent.options.amd.loader = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js';
+
     // TODO: disable uglify for CSS and JS to speed up the build and:
     // [WARN] `ember-monaco-editor/vs/editor/editor.main.js` took: 87370ms (more than 20,000ms)
 
