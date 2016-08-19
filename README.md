@@ -5,7 +5,7 @@
 An ember wrapper for the [monaco-editor](https://github.com/Microsoft/monaco-editor) (vs code's editor). From the monaco-editor's README "The Monaco Editor is the code editor that powers [VS Code](https://github.com/Microsoft/vscode), a good page describing the code editor's features is [here](https://code.visualstudio.com/docs/editor/editingevolved)".
 
 ```
-{{monaco-editor language="javascript" value=code
+{{monaco-editor language="javascript" code=code
   onChange=(action codeChanged)}}
 ```
 
