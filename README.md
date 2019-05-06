@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.org/MiguelMadero/ember-monaco-editor.svg?branch=master)](https://travis-ci.org/MiguelMadero/ember-monaco-editor)
 
+
+# DEPRECATED
+
+**NOTE:** for a more up to date version see https://github.com/mike-north/ember-monaco 
+
 # Ember-monaco-editor
 
 **NOTE:** this is still work in progress. I need to address a conflict with the AMD loader and loader.js before releasing 0.1.0.
